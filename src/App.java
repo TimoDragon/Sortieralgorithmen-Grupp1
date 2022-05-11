@@ -63,27 +63,14 @@ public class App {
         return array;
     }
 
-    // man könnte das mit dem String sortieren noch etwas besser machen da das kleine "a" nach dem großen "Z" kommt aber EGAL
-
     public static Person[] bubblesortVorname(Person[] array) {
         Person temp;
         for (int i = 1; i < array.length; i++) {
             for (int j = 0; j < array.length - i; j++) {
-                int num = array[j].getVorname().compareTo(array[j + 1].getVorname());
-                temp = array[j];
-                if (num > 0) {
+                if (array[j].getVorname().compareTo(array[j + 1].getVorname()) > 0) {
+                    temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
-                }
-                else if (num < 0) {
-                    int num2 = -1;
-
-                    if (j == 0) {
-                        num2 = 0;
-                    }
-
-                    array[j] = array[j + num2];
-                    array[j + num2] = temp;
                 }
             }
         }
@@ -95,21 +82,10 @@ public class App {
         Person temp;
         for (int i = 1; i < array.length; i++) {
             for (int j = 0; j < array.length - i; j++) {
-                int num = array[j].getNachname().compareTo(array[j + 1].getNachname());
-                temp = array[j];
-                if (num > 0) {
+                if (array[j].getNachname().compareTo(array[j + 1].getNachname()) > 0) {
+                    temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
-                }
-                else if (num < 0) {
-                    int num2 = -1;
-
-                    if (j == 0) {
-                        num2 = 0;
-                    }
-
-                    array[j] = array[j + num2];
-                    array[j + num2] = temp;
                 }
             }
         }
